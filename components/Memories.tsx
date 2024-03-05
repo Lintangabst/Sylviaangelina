@@ -1,5 +1,7 @@
 'use client'
 import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 const Memories: React.FC = () => {
   const [currentMonth, setCurrentMonth] = useState(0);
@@ -56,8 +58,8 @@ const Memories: React.FC = () => {
         ))}
       </div>
       <div className="flex justify-center mt-4 space-x-4">
-        <button onClick={prevMonth}>Previous</button>
-        <button onClick={nextMonth}>Next</button>
+        <button onClick={prevMonth}><FontAwesomeIcon icon={faChevronLeft} /></button>
+        <button onClick={nextMonth}><FontAwesomeIcon icon={faChevronRight} /></button>
       </div>
     </div>
   );
@@ -71,4 +73,3 @@ const getMonthName = (index: number): string => {
 };
 
 export default Memories;
-
